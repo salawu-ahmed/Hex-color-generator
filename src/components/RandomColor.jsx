@@ -4,6 +4,7 @@ import styles from "./RandomColor.module.css";
 const RandomColor = () => {
   const [colorType, setColorType] = useState("hex");
   const [color, setColor] = useState("black");
+
   function utility(length) {
     return Math.floor(Math.random() * length);
   }
@@ -17,6 +18,18 @@ const RandomColor = () => {
     console.log(hexColor);
     setColor(hexColor);
   };
+
+  const handleCreateRGBColor = () => {
+      const r = Math.floor(Math.random() * 255)
+    const g = Math.floor(Math.random() * 255)
+    const b = Math.floor(Math.random() * 255)
+    const rgbColor = `rgb(${r},${g},${b})`
+    const rgbColor2 = `rgb(${utility(255)},${utility(255)},${utility(255)})`
+
+    console.log(rgbColor);
+    console.log(rgbColor2);
+    setColor(rgbColor);
+  }
 
   return (
     <div
